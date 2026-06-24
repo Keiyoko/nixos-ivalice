@@ -7,35 +7,32 @@ On a fresh NixOS system, run:
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Keiyoko/nixos-ivalice/main/install.sh | bash
 ```
-After installing, don't forget to change your wallpaper in DMS settings to trigger matugen theming
-.
+After installing, don't forget to change your wallpaper in DMS settings to trigger matugen theming.
+
 ## Features
 
 **Desktop**
-- Niri (Wayland compositor)
-- DankMaterialShell with dynamic matugen theming
+- [Niri](https://github.com/YaLTeR/niri) (Wayland compositor)
+- [DankMaterialShell](https://github.com/danklinux/DankMaterialShell) with dynamic matugen theming
 - Nautilus (Default GNOME File Manager)
-- Zen Browser
+- [Zen Browser](https://github.com/youwen5/zen-browser-flake) (NixOS flake)
 - Bitwarden (Password Manager)
-
 
 **Terminal & Shell**
 - Alacritty with DMS theming
-- Eza with icon aliases
-- Fastfetch + Areofyl animated fetch on terminal open
+- [Eza](https://github.com/eza-community/eza) with icon aliases
+- Fastfetch + [Areofyl](https://github.com/areofyl/fetch) animated fetch on terminal open
 
 **Apps**
-- [Materialgram](https://github.com/kukuruzka165/materialgram)
-- [Equibop](https://github.com/Equicord/Equibop)
+- [Materialgram](https://github.com/kukuruzka165/materialgram) (Fork of telegram)
+- [Equibop](https://github.com/Equicord/Equibop) (Fork of vesktop)
 - Spotify with Remote Support
-- Bitwarden (Password Manager)
 
 **Gaming**
 - Steam with Remote Play, Dedicated Server, and Local Network Transfer support
-- Gamescope session
-- Gamemode optimizations
-- Oversteer (Steering wheel support for Logitech)
-
+- [Gamescope](https://github.com/ValveSoftware/gamescope)
+- [Gamemode](https://github.com/FeralInteractive/gamemode) optimizations
+- [Oversteer](https://github.com/berarma/oversteer) (Steering wheel support for Logitech)
 
 **System**
 - Automatic Nix store optimization
