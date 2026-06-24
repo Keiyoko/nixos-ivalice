@@ -126,10 +126,9 @@
     isNormalUser = true;
     description = "Keio";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
   };
 
-############ Unfree Packages and Experimental Features ##############
+ ############ Unfree Packages and Experimental Features ##############
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -140,7 +139,7 @@
   # Enable Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-############# Packages ####################
+ ############# Packages ####################
 
   environment.systemPackages = with pkgs; [
   
@@ -188,7 +187,7 @@
   oversteer
   ];
  
-############# Configurations #############
+ ############# Configurations #############
 
   # Steam Configuration
   programs.steam = {
