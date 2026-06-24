@@ -37,8 +37,12 @@ echo "==> Rebuilding system..."
 sudo nixos-rebuild switch --flake /etc/nixos#Ivalice
 
 echo "==> Cleaning up..."
-[ -f "$0" ] && sudo rm -- "$0"
-[ -f "$(dirname "$0")/README.md" ] && sudo rm -f -- "$(dirname "$0")/README.md"
+# $0 is 'bash' when piped via curl, so only remove if it's an actual file path
+if [ -f "$0" ] && [ "$0" != "bash" ]; then
+  SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+  sudo rm -- "$0"
+  [ -f "$SCRIPT_DIR/README.md" ] && sudo rm -f -- "$SCRIPT_DIR/README.md"
+fi
 
 echo ""
 echo "Done! Remember to update drive UUIDs in configuration.nix after booting."
