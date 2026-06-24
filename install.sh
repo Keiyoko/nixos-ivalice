@@ -2,18 +2,23 @@
 set -e
 
 REPO="https://github.com/Keiyoko/nixos-ivalice"
-TARGET="/etc/nixos/ivalice"
 
-echo "==> Cloning nixos-ivalice..."
-sudo git clone "$REPO" "$TARGET"
+echo "==> Backing up hardware configuration to /tmp..."
+sudo cp /etc/nixos/hardware-configuration.nix /tmp/hardware-configuration.nix
 
-echo "==> Copying hardware configuration..."
-sudo cp /etc/nixos/hardware-configuration.nix "$TARGET/"
+echo "==> Clearing /etc/nixos..."
+sudo rm -rf /etc/nixos
+
+echo "==> Cloning nixos-ivalice from repo..."
+sudo git clone "$REPO" /etc/nixos
+
+echo "==> Restoring hardware configuration from /tmp to /nixos..."
+sudo cp /tmp/hardware-configuration.nix /etc/nixos/hardware-configuration.nix
 
 echo "==> Rebuilding system..."
-sudo nixos-rebuild switch --flake "$TARGET#Ivalice"
+sudo nixos-rebuild switch --flake /etc/nixos
 
-echo "==> Setting up DMS..."
+echo "==> Setting up DMS, make sure to select all relevant settings, this install uses niri with alacritty by default..."
 dms setup
 
 echo ""
