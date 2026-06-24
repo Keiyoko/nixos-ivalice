@@ -13,7 +13,7 @@ After installing, don't forget to change your wallpaper in DMS settings to trigg
 
 **Desktop**
 - [Niri](https://github.com/YaLTeR/niri) (Wayland compositor)
-- [DankMaterialShell](https://github.com/danklinux/DankMaterialShell) with dynamic matugen theming
+- [DankMaterialShell](https://danklinux.com) with dynamic matugen theming
 - Nautilus (Default GNOME File Manager)
 - [Zen Browser](https://github.com/youwen5/zen-browser-flake) (NixOS flake)
 - Bitwarden (Password Manager)
