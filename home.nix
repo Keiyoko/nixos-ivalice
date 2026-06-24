@@ -14,13 +14,13 @@
   };
   Service = {
     Type = "oneshot";
-    ExecStart = "dms setup";
+    ExecStart = "${pkgs.dms-shell}/bin/dms setup";    
     RemainAfterExit = true;
   };
   Install = {
     WantedBy = [ "graphical-session.target" ];
   };
-}; 
+};
   
   # Niri (DMS manages its own dms/ subdirectory)
   home.file.".config/niri/config.kdl".text = ''

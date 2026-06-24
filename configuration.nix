@@ -106,7 +106,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${username} = {
     isNormalUser = true;
-    description = "Keio";
+    description = username;
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
@@ -212,10 +212,10 @@
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gnome pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
-  # Fastfetch on Terminal Open
+  # Animated Fetch on Terminal Open
   programs.bash.interactiveShellInit = ''fetch'';
 
   # Automatic Store Optimization
