@@ -1,1 +1,2 @@
+# Removes vim swap files
 *.sw?
