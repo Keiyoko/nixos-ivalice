@@ -69,6 +69,18 @@
   # Disable Watchdog in Kernel
   boot.kernelParams = [ "nowatchdog" ];
 
+  # Systemd service to run dms setup on first boot
+  systemd.user.services.dms-first-boot = {
+  description = "DMS first boot setup";
+  wantedBy = [ "graphical-session.target" ];
+  after = [ "graphical-session.target" ];
+  unitConfig.ConditionPathExists = "!/home/keio/.config/DankMaterialShell/settings.json";
+  serviceConfig = {
+    Type = "oneshot";
+    ExecStart = "${pkgs.dms}/bin/dms setup";
+    RemainAfterExit = true;
+  };
+};
 
  ########## System Definitions ############
 

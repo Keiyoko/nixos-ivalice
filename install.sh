@@ -12,15 +12,17 @@ sudo rm -rf /etc/nixos
 echo "==> Cloning nixos-ivalice from repo..."
 sudo git clone "$REPO" /etc/nixos
 
-echo "==> Restoring hardware configuration from /tmp to /nixos..."
+echo "==> Restoring hardware configuration from /tmp to /etc/nixos..."
 sudo cp /tmp/hardware-configuration.nix /etc/nixos/hardware-configuration.nix
+sudo git -C /etc/nixos add -f hardware-configuration.nix
 
 echo "==> Rebuilding system..."
-sudo nixos-rebuild switch --flake /etc/nixos
-
-echo "==> Setting up DMS, make sure to select all relevant settings, this install uses niri with alacritty by default..."
-dms setup
+sudo nixos-rebuild switch --flake /etc/nixos#Ivalice
 
 echo ""
-echo "Done! Change your wallpaper in DMS to trigger matugen theming."
-echo "Reboot when ready."
+echo "Done! Rebooting in:"
+for i in 5 4 3 2 1; do
+  echo "  $i..."
+  sleep 1
+done
+sudo reboot
