@@ -4,6 +4,13 @@
 
  system.stateVersion = "26.05";
 
+ ################ Imports #################
+
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+    ];
+
  ################# Drive Mounts ##################
 
  # Drive 1 Mount
@@ -52,13 +59,6 @@
    nerd-fonts.symbols-only
    nerd-fonts.iosevka
  ];
-
- ################ Imports #################
-
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
 
  ################ Bootloader ##############
 
