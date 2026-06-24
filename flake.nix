@@ -21,7 +21,7 @@
       # Change this if you are on a different architecture
       system = "x86_64-linux";
 
-      # Change username here
+      # Change username here if needed
       username = "keio";
     in {
       nixosConfigurations.Ivalice = nixpkgs.lib.nixosSystem {
