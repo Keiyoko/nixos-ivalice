@@ -3,6 +3,11 @@ set -e
 
 REPO="https://github.com/Keiyoko/nixos-ivalice"
 
+if [ ! -f /etc/nixos/hardware-configuration.nix ]; then
+  echo "ERROR: /etc/nixos/hardware-configuration.nix not found. Are you on an installed NixOS system?"
+  exit 1
+fi
+
 echo "==> Backing up hardware configuration..."
 sudo cp /etc/nixos/hardware-configuration.nix /tmp/hardware-configuration.nix
 
@@ -10,7 +15,7 @@ echo "==> Clearing /etc/nixos..."
 sudo rm -rf /etc/nixos
 
 echo "==> Cloning nixos-ivalice..."
-nix-shell -p git --run "git clone $REPO /etc/nixos"
+nix-shell -p git --run "sudo git clone $REPO /etc/nixos"
 
 echo "==> Restoring hardware configuration..."
 sudo cp /tmp/hardware-configuration.nix /etc/nixos/hardware-configuration.nix
