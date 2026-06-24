@@ -239,6 +239,10 @@
 
  ########### Networking Configuration ###########
 
+ # Preserve SSH_AUTH_SOCK in sudo"
+ security.sudo.extraConfig = ''
+   Defaults env_keep+=SSH_AUTH_SOCK
+ '';
 
  # Enable Spotify Connect
  networking.firewall.allowedTCPPorts = [ 57621 ];
