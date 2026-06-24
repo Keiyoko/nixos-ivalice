@@ -1,6 +1,14 @@
 # Nixos-Ivalice
 Keio's personal NixOS configuration for his host system: Ivalice.
 
+## Install
+On a fresh NixOS system, run:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Keiyoko/nixos-ivalice/main/install.sh | bash
+```
+After installing, don't forget to change your wallpaper in DMS settings to trigger matugen theming
+.
 ## Features
 
 **Desktop**
@@ -28,12 +36,3 @@ Keio's personal NixOS configuration for his host system: Ivalice.
 - Garbage collection every 3 days
 - Home Manager for declarative dotfile management
 - Flakes enabled
-
-## Install
-On a fresh NixOS system, run:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/Keiyoko/nixos-ivalice/main/install.sh | bash
-```
-
-After installing, don't forget to change your wallpaper in DMS settings to trigger matugen theming.
