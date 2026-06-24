@@ -1,7 +1,11 @@
 { config, pkgs, ... }:
+  let
+    # Change username here
+    username = "keio";
+  in
 {
-  home.username = "keio";
-  home.homeDirectory = "/home/keio";
+  home.username = username;
+  home.homeDirectory = "/home/${username}";
   home.stateVersion = "26.05";
   programs.home-manager.enable = true;
 
@@ -11,13 +15,6 @@
   config-notification {
       disable-failed
   }
-
-  /-output "eDP-2" {
-      mode "2560x1600@239.998993"
-      position x=2560 y=0
-      variable-refresh-rate
-  }
-
   gestures {
       hot-corners {
           off
@@ -244,8 +241,7 @@
         "right": 2,
         "left": 2
       }
-    },
-    "modules": []
+    }
   }
 '';
   

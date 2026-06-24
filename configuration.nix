@@ -1,4 +1,8 @@
 {config, pkgs, inputs, ... }:
+let
+  # Change username here
+  username = "keio";
+in
 {
  ################# System Version #################
 
@@ -74,7 +78,7 @@
   description = "DMS first boot setup";
   wantedBy = [ "graphical-session.target" ];
   after = [ "graphical-session.target" ];
-  unitConfig.ConditionPathExists = "!/home/keio/.config/DankMaterialShell/settings.json";
+  unitConfig.ConditionPathExists = "!/home/${username}/.config/DankMaterialShell/settings.json";
   serviceConfig = {
     Type = "oneshot";
     ExecStart = "${pkgs.dms}/bin/dms setup";
@@ -117,7 +121,7 @@
   services.gvfs.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users."keio" = {
+  users.users.${username} = {
     isNormalUser = true;
     description = "Keio";
     extraGroups = [ "networkmanager" "wheel" ];
@@ -130,7 +134,6 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  
   # Enable Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -208,8 +211,8 @@
   services.displayManager.dms-greeter = {
    enable = true;
    compositor = {name = "niri"; };
-   configHome = "/home/keio";
-   configFiles = ["/home/keio/.config/DankMaterialShell/settings.json"];
+   configHome = "/home/${username}";
+   configFiles = ["/home/${username}/.config/DankMaterialShell/settings.json"];
   };
 
  ######### System Configurations ###########
@@ -243,7 +246,6 @@
  
  # Logitech Steering Wheel Drivers
  hardware.new-lg4ff.enable = true;
- boot.kernelModules = [ "new-lg4ff" ];
  services.udev.packages = with pkgs; [
    oversteer
   ];
