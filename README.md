@@ -31,6 +31,7 @@ curl -fsSL https://raw.githubusercontent.com/Keiyoko/nixos-ivalice/main/install.
 
 **Terminal & Shell**
 - Alacritty with DMS theming
+- [Fish](https://fishshell.com) shell with [Starship](https://starship.rs) prompt
 - [Eza](https://github.com/eza-community/eza) with icon aliases
 - Fastfetch + [Areofyl](https://github.com/areofyl/fetch) animated fetch on terminal open
 
