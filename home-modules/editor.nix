@@ -1,16 +1,17 @@
 { config, pkgs, ... }:
 {
+  # Clipboard Support
+  home.packages = with pkgs; [
+    wl-clipboard
+  ];
+
   # Neovim
   programs.neovim = {
     enable = true;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
-    
-    extraPackages = with pkgs; [
-      wl-clipboard
-    ];
-
+   
     plugins = with pkgs.vimPlugins; [
       nvim-web-devicons
       nvim-tree-lua
