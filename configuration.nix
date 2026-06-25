@@ -41,7 +41,6 @@
 
   services.xserver.xkb = {
     layout = "us";
-    variant = "";
   };
 
   users.users.${username} = {
@@ -63,8 +62,7 @@
     # Zen Browser Flake
     (inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default)
 
-    # System Critical Packages
-    neovim
+    # Core Package
     eza
     git
     alacritty
