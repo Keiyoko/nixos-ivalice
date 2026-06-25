@@ -134,8 +134,10 @@
 
   ########### Networking Configuration #################
   security.sudo.extraConfig = ''
+    Defaults always_set_home
     Defaults env_keep+=SSH_AUTH_SOCK
     Defaults env_keep+=HOME
+    Defaults env_keep += "WAYLAND_DISPLAY XDG_RUNTIME_DIR"
   '';
   
   # Spotify Connect
