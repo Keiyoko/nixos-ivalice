@@ -6,6 +6,9 @@
     ./editor.nix
   ];
 
+  # Modules
+  modules.compositor.enable = true;
+
   home.username = username;
   home.homeDirectory = "/home/${username}";
   home.stateVersion = "26.05";

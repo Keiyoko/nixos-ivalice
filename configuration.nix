@@ -5,7 +5,7 @@
 
   ################ Imports #################
   imports = [
-    ./hardware-configuration.nix
+    ./system-modules/hardware-configuration.nix
     ./system-modules/desktop.nix
     ./system-modules/gaming.nix
     ./system-modules/hardware.nix
@@ -15,7 +15,6 @@
   modules.desktop.enable = true;
   modules.gaming.enable = true;
   modules.hardware.enable = true;
-  modules.compositor.enable = true;
 
   ################ Bootloader #################
   boot.loader.systemd-boot.enable = true;
