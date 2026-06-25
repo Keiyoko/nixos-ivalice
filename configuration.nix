@@ -15,6 +15,7 @@
   modules.desktop.enable = true;
   modules.gaming.enable = true;
   modules.hardware.enable = true;
+  modules.compositor.enable = true;
 
   ################ Bootloader #################
   boot.loader.systemd-boot.enable = true;
