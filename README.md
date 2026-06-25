@@ -18,12 +18,12 @@ curl -fsSL https://raw.githubusercontent.com/Keiyoko/nixos-ivalice/main/install.
 
 ## Structure
 ```
-nixos-ivalice/
+/etc/nixos/
 ├── flake.nix                        # inputs
 ├── configuration.nix                # locale, user, packages, nix settings
-├── hardware-configuration.nix       # auto-generated hardware config
 │
 ├── system-modules/
+│   ├── hardware-configuration.nix   
 │   ├── desktop.nix                  # niri, dms-shell, dms-greeter, fonts, xdg portal
 │   ├── gaming.nix                   # steam, gamescope, gamemode
 │   └── hardware.nix                 # drive mounts, lg4ff, oversteer
