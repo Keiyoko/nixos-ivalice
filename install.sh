@@ -4,8 +4,7 @@ set -e
 REPO="https://github.com/Keiyoko/nixos-ivalice"
 
 # Print a clear recovery message if anything fails mid-install
-trap 'echo ""; echo "ERROR: Installation failed. Your hardware config is at /tmp/hardware-configuration.nix"; echo "To recover: sudo mkdir -p /etc/nixos && sudo cp /tmp/hardware-configuration.nix /etc/nixos/"' ERR
-
+trap 'echo ""; echo "ERROR: Installation failed. Your hardware config is at /tmp/hardware-configuration.nix"; echo "To recover: sudo mkdir -p /etc/nixos/system-modules && sudo cp /tmp/hardware-configuration.nix /etc/nixos/system-modules/"' ERR
 if [ ! -f /etc/nixos/hardware-configuration.nix ]; then
   echo "ERROR: /etc/nixos/hardware-configuration.nix not found. Are you on an installed NixOS system?"
   exit 1
@@ -21,7 +20,7 @@ echo "==> Cloning nixos-ivalice..."
 nix-shell -p git --run "sudo git clone $REPO /etc/nixos" || {
   echo "ERROR: Clone failed. Restoring hardware config..."
   sudo mkdir -p /etc/nixos
-  sudo cp /tmp/hardware-configuration.nix /etc/nixos/
+  sudo mkdir -p /etc/nixos/system-modules && sudo cp /tmp/hardware-configuration.nix /etc/nixos/system-modules/
   exit 1
 }
 
@@ -31,7 +30,7 @@ for f in flake.nix configuration.nix home-modules/home.nix system-modules/deskto
 done
 
 echo "==> Restoring hardware configuration..."
-sudo cp /tmp/hardware-configuration.nix /etc/nixos/hardware-configuration.nix
+sudo cp /tmp/hardware-configuration.nix /etc/nixos/system-modules/hardware-configuration.nix
 
 echo "==> Rebuilding system..."
 sudo nixos-rebuild switch --flake /etc/nixos#Ivalice
