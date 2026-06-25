@@ -17,6 +17,7 @@ curl -fsSL https://raw.githubusercontent.com/Keiyoko/nixos-ivalice/main/install.
 3. Change your wallpaper in DMS settings to trigger matugen theming
 
 ## Structure
+'''
 nixos-ivalice/
 ├── flake.nix                        # inputs
 ├── configuration.nix                # locale, user, packages, nix settings
@@ -32,6 +33,7 @@ nixos-ivalice/
     ├── compositor.nix               # niri config + dms first install service
     ├── terminal.nix                 # fish, starship, alacritty, fetch
     └── editor.nix                   # neovim
+'''
 
 ## Features
 **Desktop**
