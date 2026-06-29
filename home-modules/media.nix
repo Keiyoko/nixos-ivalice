@@ -14,7 +14,6 @@
 
     # VLC Media Player
     home.packages = with pkgs; [
-      vlc
       mpv
       imv
     ];
