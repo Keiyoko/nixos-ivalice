@@ -17,9 +17,15 @@
       options = [ "defaults" "nofail" "x-gvfs-show" ];
     };
 
-    # Logitech Steering Wheel
-    hardware.new-lg4ff.enable = true;
+    # Logitech Steering Wheel (G25/G27/G29/G920/G923)
+    boot.extraModulePackages = with config.boot.kernelPackages; [ new-lg4ff ];
+    boot.kernelModules = [ "hid-logitech-new" ];
+
+    # Udev Rules & System Packages
     services.udev.packages = with pkgs; [ oversteer ];
-    environment.systemPackages = with pkgs; [ oversteer ];
+    
+    environment.systemPackages = with pkgs; [ 
+      oversteer
+    ];
   };
 }
