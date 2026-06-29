@@ -56,7 +56,12 @@ curl -fsSL https://raw.githubusercontent.com/Keiyoko/nixos-ivalice/main/install.
 **Apps**
 - [Materialgram](https://github.com/kukuruzka165/materialgram) (Fork of telegram)
 - [Equibop](https://github.com/Equicord/Equibop) (Fork of vesktop)
-- Spotify with Remote Support
+- Spotify with Remote support
+
+**Media Apps**
+- OBS Studio
+- MPV
+- IMV
 
 **Gaming**
 - Steam with Remote Play, Dedicated Server, and Local Network Transfer support

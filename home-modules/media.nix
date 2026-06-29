@@ -14,7 +14,9 @@
 
     # VLC Media Player
     home.packages = with pkgs; [
-      vlc 
+      vlc
+      mpv
+      imv
     ];
   };
 }
