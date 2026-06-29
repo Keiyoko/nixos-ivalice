@@ -50,6 +50,7 @@
       plenary-nvim
       lualine-nvim
       which-key-nvim
+      bufferline-nvim
 
       # Coloring using base16-nvim
       base16-nvim
@@ -106,6 +107,39 @@
       vim.opt.signcolumn     = "yes"         -- stop layout shifting on diagnostics
       vim.opt.swapfile       = false
 
+      -- ── Bufferline Configuration ──────────────────────────────────────────
+      require("bufferline").setup({
+        options = {
+          mode = "buffers",
+          separator_style = "thick",
+          offsets = {
+            {
+              filetype = "NvimTree",
+              text = "File Explorer",
+              text_align = "center",
+              separator = true
+            }
+          },
+          diagnostics = "nvim_lsp",
+          groups = {
+            items = {} 
+          }
+        },
+        highlights = {
+          fill = { bg = "none" },
+          background = { bg = "none" },
+          buffer_selected = { bg = "none", bold = true, italic = true },
+          buffer_visible = { bg = "none" },
+          separator = { bg = "none" },
+          separator_selected = { bg = "none" },
+          separator_visible = { bg = "none" }
+        }
+      })
+      -- ── Updated Keymaps (bufferline specific) ──────────────────────────────
+      vim.keymap.set("n", "<C-l>", "<cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
+      vim.keymap.set("n", "<C-h>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Prev buffer" })
+      vim.keymap.set("n", "<C-w>", "<cmd>bdelete<CR>", { desc = "Close buffer" })
+      
       -- ── Treesitter ─────────────────────────────────────────────────────────
       require("nvim-treesitter.config").setup({
         highlight    = { enable = true },
