@@ -4,16 +4,33 @@
 
   config = lib.mkIf config.modules.gaming.enable {
 
-    # Steam
+    # Steam Configuration
     programs.steam = {
       enable = true;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;
-      gamescopeSession.enable = true;
+      gamescopeSession.enable = true; 
     };
 
-    # Game Optimizations
-    programs.gamemode.enable = true;
+    # Graphics & Driver Optimizations 
+    hardware.graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+
+    # The Baseline performance safety nets
+    programs.gamemode.enable = true; 
+    programs.gamescope.enable = true;
+
+    # Kernel Optimizations
+    boot.kernel.sysctl = {
+      "vm.max_map_count" = 2147483642;
+    };
+
+    # Custom Proton
+    environment.systemPackages = with pkgs; [
+      protonup-qt 
+    ];
   };
 }
