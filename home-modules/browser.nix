@@ -26,14 +26,10 @@ in
         };
 
         settings = {
-          # Required for userChrome.css to load your DMS theme
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-          
-          # Clean Font Configuration
           "font.name.serif.x-western" = "Iosevka Nerd Font";
           "font.name.sans-serif.x-western" = "Iosevka Nerd Font";
           "font.name.monospace.x-western" = "Iosevka Nerd Font";
-          "browser.display.use_document_fonts" = 1;
         };
       };
 
@@ -46,35 +42,33 @@ in
       };
     };
 
-    # UI Configuration
+    # UI Configuration (Chrome)
     home.file.".zen/7o3g1h0b.Default Profile/chrome/userChrome.css" = {
       text = ''
-        /* Load your DMS theme */
         @import url("file://${config.home.homeDirectory}/.config/DankMaterialShell/zen.css");
 
-        /* Apply Iosevka and 15px size to the UI */
-        :root {
-          --zen-font: "Iosevka Nerd Font" !important;
+        * {
+          font-family: "Iosevka Nerd Font" !important;
+          font-size: 15px !important;
         }
 
-        #sidebar-box, 
-        #urlbar-input,
+        #sidebar-box,
         #sidebar-header,
         .sidebar-panel,
-        .browserSidebarContainer {
-          font-family: var(--zen-font) !important;
-          font-size: 15px !important;
+        .tab-label,
+        .sidebar-item-text {
+          font-family: "Iosevka Nerd Font" !important;
         }
       '';
     };
 
-    # Force Iosevka on websites
+    # Content Configuration (Website body)
     home.file.".zen/7o3g1h0b.Default Profile/chrome/userContent.css" = {
       text = ''
         body, html, p, span, div, h1, h2, h3, h4, h5, h6, a, li, td {
           font-family: "Iosevka Nerd Font" !important;
         }
-      '';    
-      }; 
+      '';
     };
+  };
 }

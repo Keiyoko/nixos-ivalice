@@ -7,7 +7,7 @@
     # Window Manager
     programs.niri.enable = true;
 
-    # DMS Shell
+    # DMS Shell (Clean state)
     programs.dms-shell = {
       enable = true;
       systemd = {
@@ -34,9 +34,10 @@
       nerd-fonts.iosevka
     ];
 
-    programs.dconf.enable = true;
-    # Note: You might need to set this via home-manager if not using dconf modules
-
+    # Icon Pack
+    environment.systemPackages = with pkgs; [
+      papirus-icon-theme
+    ];
 
     # Portals
     xdg.portal = {
