@@ -14,6 +14,7 @@
   modules.media.enable = true;
   modules.browser.zen.enable = true;
 
+  # Environment Variables
   home.username = username;
   home.homeDirectory = "/home/${username}";
   home.stateVersion = "26.05";

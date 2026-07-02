@@ -33,7 +33,7 @@ in
           "font.name.serif.x-western" = "Iosevka Nerd Font";
           "font.name.sans-serif.x-western" = "Iosevka Nerd Font";
           "font.name.monospace.x-western" = "Iosevka Nerd Font";
-          "browser.display.use_document_fonts" = 0;
+          "browser.display.use_document_fonts" = 1;
         };
       };
 
@@ -46,7 +46,7 @@ in
       };
     };
 
-    # Minimal UI Configuration
+    # UI Configuration
     home.file.".zen/7o3g1h0b.Default Profile/chrome/userChrome.css" = {
       text = ''
         /* Load your DMS theme */
@@ -68,11 +68,13 @@ in
       '';
     };
 
-    # Force Iosevka on all websites
+    # Force Iosevka on websites
     home.file.".zen/7o3g1h0b.Default Profile/chrome/userContent.css" = {
       text = ''
-        * { font-family: "Iosevka Nerd Font" !important; }
-      '';
-    }; 
-  };
+        body, html, p, span, div, h1, h2, h3, h4, h5, h6, a, li, td {
+          font-family: "Iosevka Nerd Font" !important;
+        }
+      '';    
+      }; 
+    };
 }

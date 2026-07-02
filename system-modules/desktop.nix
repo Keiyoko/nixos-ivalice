@@ -34,6 +34,10 @@
       nerd-fonts.iosevka
     ];
 
+    programs.dconf.enable = true;
+    # Note: You might need to set this via home-manager if not using dconf modules
+
+
     # Portals
     xdg.portal = {
       enable = true;
