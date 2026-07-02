@@ -42,6 +42,9 @@
 
   services.xserver.xkb = {
     layout = "us";
+    
+    # Swap capslock and escape
+    options = "caps:swapescape";
   };
 
   users.users.${username} = {

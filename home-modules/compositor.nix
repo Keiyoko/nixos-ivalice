@@ -33,6 +33,10 @@
 
       input {
           keyboard {
+              xkb {
+                // Swap capslock and escape for VIM users
+                options "caps:swapescape"
+          }
               numlock
           }
           touchpad {
@@ -47,12 +51,12 @@
               off
           }
           shadow {
-              softness 30
-              spread 5
-              offset x=0 y=5
+              softness 30 
+              spread 5 
+              offset x=0 y=5 
               color "#0007"
+              }
           }
-      }
 
       prefer-no-csd
       screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
