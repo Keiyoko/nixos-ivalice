@@ -133,6 +133,17 @@
           }
       }
 
+     // Send Steam notifications/toasts to the bottom right corner
+    window-rule {
+          match app-id="^steam$" title="^notificationtoasts_.*$"
+          open-floating true
+          opacity 0.8
+          default-floating-position x=10 y=10 relative-to="bottom-right"
+          background-effect {
+              blur true
+          }
+      }
+
       // Spotify
       window-rule {
           match app-id="Spotify"
