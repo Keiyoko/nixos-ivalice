@@ -25,6 +25,11 @@
       config-notification {
           disable-failed
       }
+      
+      // Skips hotkey overlay at startup
+      hotkey-overlay {
+          skip-at-startup
+      }
 
       input {
           keyboard {
