@@ -139,6 +139,8 @@
     window-rule {
         match app-id="imv"
         open-floating true
+        geometry-corner-radius 12
+        clip-to-geometry true
         opacity 0.8
         background-effect {
             blur true
@@ -146,6 +148,8 @@
     }
     window-rule {
         match app-id="mpv"
+        geometry-corner-radius 12
+        clip-to-geometry true
         open-floating true
         opacity 0.95
         background-effect {
@@ -162,8 +166,29 @@
         }
     }
     window-rule {
+    match app-id="Spotify"
+    geometry-corner-radius 12
+    clip-to-geometry true
+    opacity 0.9
+    background-effect {
+        blur true
+        }
+    }
+
+    window-rule {
+        match app-id=r#"^steam$"#
+        geometry-corner-radius 12
+        clip-to-geometry true
+        opacity 0.9
+        background-effect {
+        blur true
+        }
+    }
+    window-rule {
     match app-id="zen"
-    opacity 0.85
+    geometry-corner-radius 12
+    clip-to-geometry true
+    opacity 0.9
     background-effect {
         blur true
       }
