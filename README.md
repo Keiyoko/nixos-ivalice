@@ -33,7 +33,8 @@ curl -fsSL https://raw.githubusercontent.com/Keiyoko/nixos-ivalice/main/install.
     ├── compositor.nix               # niri config + dms first install service
     ├── terminal.nix                 # fish, starship, alacritty, fetch
     ├── editor.nix                   # neovim
-    └── media.nix                    # mpv, imv
+    ├── media.nix                    # mpv, imv
+    └── browser.nix                  # <-- NEW: Zen Browser config
 ```
 
 ## Features
@@ -41,7 +42,7 @@ curl -fsSL https://raw.githubusercontent.com/Keiyoko/nixos-ivalice/main/install.
 - [Niri](https://github.com/YaLTeR/niri) (Wayland compositor)
 - [DankMaterialShell](https://danklinux.com) with dynamic matugen theming
 - Nautilus (Default GNOME File Manager)
-- [Zen Browser](https://github.com/youwen5/zen-browser-flake) (NixOS flake)
+- [Zen Browser](https://github.com/0xc000022070/zen-browser-flake) (NixOS flake)
 - Bitwarden (Password Manager)
 
 **Terminal & Shell**
