@@ -161,7 +161,7 @@
 
       // Terminal
       window-rule {
-          match app-id="^Alacritty$"
+          match app-id="^kitty$"
           opacity 0.8
           background-effect {
               blur true

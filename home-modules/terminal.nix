@@ -86,50 +86,53 @@
     }
   '';
 
-  # Alacritty
-  home.file.".config/alacritty/alacritty.toml".text = ''
-    [general]
-    import = [
-      "~/.config/alacritty/dank-theme.toml"
-    ]
+  # Kitty
+  home.file.".config/kitty/kitty.conf".text = ''
+    include dank-tabs.conf
+    include dank-theme.conf
 
-    [window]
-    decorations = "None"
-    padding = { x = 12, y = 12 }
+    # Window
+    hide_window_decorations yes
+    window_padding_width 12
+    confirm_os_window_close 0
 
-    [scrolling]
-    history = 5000
+    # Scrolling
+    scrollback_lines 5000
 
-    [cursor]
-    style = { shape = "Beam", blinking = "On" }
-    blink_interval = 500
-    unfocused_hollow = true
+    # Cursor
+    cursor_shape beam
+    cursor_blink_interval 0.5
+    cursor_stop_blinking_after 0
+    cursor_shape_unfocused hollow
 
-    [font]
-    normal = { family = "Iosevka Nerd Font Mono", style = "Regular" }
-    bold = { family = "Iosevka Nerd Font Mono", style = "Bold" }
-    italic = { family = "Iosevka Nerd Font Mono", style = "Italic" }
-    bold_italic = { family = "Iosevka Nerd Font Mono", style = "Bold Italic" }
-    size = 12.0
+    # Smooth caret animation (kitty's animated cursor trail)
+    cursor_trail 1
+    cursor_trail_decay 0.1 0.4
+    cursor_trail_start_threshold 2
 
-    [mouse]
-    hide_when_typing = true
+    # Font
+    font_family      Iosevka Nerd Font Mono
+    bold_font        Iosevka Nerd Font Mono Bold
+    italic_font      Iosevka Nerd Font Mono Italic
+    bold_italic_font Iosevka Nerd Font Mono Bold Italic
+    font_size 12.0
 
-    [selection]
-    save_to_clipboard = false
+    # Mouse 
+    mouse_hide_wait 3.0
 
-    [bell]
-    duration = 0
+    # Selection 
+    copy_on_select no
 
-    [keyboard]
-    bindings = [
-      { key = "C",      mods = "Control|Shift", action = "Copy"  },
-      { key = "V",      mods = "Control|Shift", action = "Paste" },
-      { key = "N",      mods = "Control|Shift", action = "SpawnNewInstance" },
-      { key = "Equals", mods = "Control|Shift", action = "IncreaseFontSize" },
-      { key = "Minus",  mods = "Control",       action = "DecreaseFontSize" },
-      { key = "Key0",   mods = "Control",       action = "ResetFontSize"    },
-      { key = "Enter",  mods = "Shift",         chars = "\n" },
-    ]
-  '';
+    # Bell
+    enable_audio_bell no
+
+    # Keybindings
+    map ctrl+shift+c copy_to_clipboard
+    map ctrl+shift+v paste_from_clipboard
+    map ctrl+shift+n new_os_window
+    map ctrl+shift+equal change_font_size all +1.0
+    map ctrl+minus change_font_size all -1.0
+    map ctrl+0 change_font_size all 0
+    map shift+enter send_text all \n
+   '';
 }

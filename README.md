@@ -31,7 +31,7 @@ curl -fsSL https://raw.githubusercontent.com/Keiyoko/nixos-ivalice/main/install.
 └── home-modules/
     ├── home.nix                     # home manager entrypoint
     ├── compositor.nix               # niri config + dms first install service
-    ├── terminal.nix                 # fish, starship, alacritty, fetch
+    ├── terminal.nix                 # fish, starship, kitty, fetch
     ├── editor.nix                   # neovim
     ├── media.nix                    # mpv, imv
     └── browser.nix                  # Zen Browser config
@@ -46,7 +46,7 @@ curl -fsSL https://raw.githubusercontent.com/Keiyoko/nixos-ivalice/main/install.
 - Bitwarden (Password Manager)
 
 **Terminal & Shell**
-- Alacritty with DMS theming
+- Kitty with DMS theming
 - [Fish](https://fishshell.com) shell with [Starship](https://starship.rs) prompt
 - [Eza](https://github.com/eza-community/eza) with icon aliases
 - Fastfetch + [Areofyl](https://github.com/areofyl/fetch) animated fetch on terminal open

@@ -63,7 +63,7 @@
     # Core Packages
     eza
     git
-    alacritty
+    kitty
     nautilus
     bitwarden-desktop
     xwayland-satellite
