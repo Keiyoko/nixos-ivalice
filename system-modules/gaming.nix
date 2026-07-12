@@ -30,7 +30,8 @@
 
     # Custom Proton
     environment.systemPackages = with pkgs; [
-      protonup-qt 
+      protonup-qt
+      scanmem
     ];
   };
 }

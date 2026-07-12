@@ -66,7 +66,7 @@ in
     home.file.".zen/7o3g1h0b.Default Profile/chrome/userContent.css" = {
       text = ''
         body, html, p, span, div, h1, h2, h3, h4, h5, h6, a, li, td {
-          font-family: "Iosevka Nerd Font" !important;
+          font-family: "Iosevka Nerd Font";
         }
       '';
     };
