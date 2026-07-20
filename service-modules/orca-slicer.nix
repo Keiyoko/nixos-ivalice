@@ -11,6 +11,8 @@ let
 
   appimageContents = pkgs.appimageTools.extractType2 { inherit pname version src; };
 
+  gst-plugins-good-gtk = pkgs.gst_all_1.gst-plugins-good.override { gtkSupport = true; };
+
   orca-slicer-unwrapped = pkgs.appimageTools.wrapType2 {
     inherit pname version src;
     extraPkgs = pkgs: with pkgs; [
@@ -18,22 +20,12 @@ let
       libsoup_3
       gst_all_1.gstreamer
       gst_all_1.gst-plugins-base
-      gst_all_1.gst-plugins-good
+      gst-plugins-good-gtk
       gst_all_1.gst-plugins-bad
       gst_all_1.gst-plugins-ugly
       gst_all_1.gst-libav
+      gtk3
     ];
-    extraInstallCommands = ''
-      desktopFile=$(find ${appimageContents} -maxdepth 1 -name "*.desktop" | head -n1)
-      install -m 444 -D "$desktopFile" $out/share/applications/orca-slicer.desktop
-      substituteInPlace $out/share/applications/orca-slicer.desktop \
-        --replace "Exec=AppRun" "Exec=orca-slicer"
-
-      iconFile=$(find ${appimageContents} -maxdepth 1 \( -name "*.png" -o -name "*.svg" \) | head -n1)
-      if [ -n "$iconFile" ]; then
-        install -m 444 -D "$iconFile" $out/share/icons/hicolor/256x256/apps/orca-slicer.png
-      fi
-    '';
   };
 
   orca-slicer-appimage = pkgs.symlinkJoin {
@@ -43,6 +35,16 @@ let
     postBuild = ''
       wrapProgram $out/bin/orca-slicer \
         --set GTK_THEME "Adwaita:dark"
+
+      desktopFile=$(find ${appimageContents} -maxdepth 1 -name "*.desktop" | head -n1)
+      install -m 444 -D "$desktopFile" $out/share/applications/orca-slicer.desktop
+      substituteInPlace $out/share/applications/orca-slicer.desktop \
+        --replace "Exec=AppRun" "Exec=$out/bin/orca-slicer"
+
+      iconFile=$(find ${appimageContents} -maxdepth 1 \( -name "*.png" -o -name "*.svg" \) | head -n1)
+      if [ -n "$iconFile" ]; then
+        install -m 444 -D "$iconFile" $out/share/icons/hicolor/256x256/apps/orca-slicer.png
+      fi
     '';
   };
 in

@@ -26,6 +26,7 @@
     # Service Modules
     ./service-modules/syncthing.nix
     ./service-modules/orca-slicer.nix
+    ./service-modules/freecad.nix
   ];
 
   ############### Modules ################

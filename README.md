@@ -1,6 +1,6 @@
 # nixos-ivalice
 
-Personal NixOS flake config for Ivalice.
+Keio's NixOS flake config for host machine: Ivalice
 
 ## Setup
 
@@ -39,7 +39,8 @@ etc/nixos/
 │
 ├── service-modules/
 │   ├── syncthing.nix
-│   └── orca-slicer.nix
+│   ├── orca-slicer.nix
+│   └── freecad.nix
 │
 └── home-modules/
     ├── home.nix
