@@ -5,10 +5,16 @@
 
   ################ Imports #################
   imports = [
+
+    # System Modules
     ./system-modules/hardware-configuration.nix
     ./system-modules/desktop.nix
     ./system-modules/gaming.nix
     ./system-modules/hardware.nix
+
+    # Service Modules
+    ./service-modules/syncthing.nix
+    ./service-modules/orca-slicer.nix
   ];
 
   ############### Modules ################
