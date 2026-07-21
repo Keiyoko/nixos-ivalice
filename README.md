@@ -13,7 +13,6 @@ etc/nixos/
 ├── flake.nix
 ├── flake.lock
 ├── configuration.nix
-├── install.sh
 │
 ├── certs/
 │   └── caddy-local-ca.crt
