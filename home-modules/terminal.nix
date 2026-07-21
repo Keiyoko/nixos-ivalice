@@ -65,14 +65,12 @@
       height=15
       os
       kernel
-      uptime
-      packages
-      terminal
-      font
 
       cpu
       gpu
       memory
+      disk
+      uptime
     '';
 
     # Fastfetch
