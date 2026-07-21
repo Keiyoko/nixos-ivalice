@@ -1,5 +1,8 @@
 { config, pkgs, username, ... }:
 {
+  # Enables fish system-wide (registers it in /etc/shells) so it's valid below
+  programs.fish.enable = true;
+
   users.users.${username} = {
     isNormalUser = true;
     description = username;

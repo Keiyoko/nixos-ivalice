@@ -18,9 +18,10 @@
     ./system-modules/core/locale.nix
     ./system-modules/core/users.nix
     ./system-modules/core/nix-settings.nix
+    ./system-modules/core/aliases.nix
+    ./system-modules/core/root-nvim.nix
 
     ./system-modules/packages.nix
-    ./system-modules/shell.nix
     ./system-modules/networking.nix
 
     # Service Modules
