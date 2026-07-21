@@ -1,8 +1,8 @@
 { config, pkgs, lib, ... }:
 {
-  options.modules.gaming.enable = lib.mkEnableOption "gaming";
+  options.modules.steam.enable = lib.mkEnableOption "steam";
 
-  config = lib.mkIf config.modules.gaming.enable {
+  config = lib.mkIf config.modules.steam.enable {
 
     # Steam Configuration
     programs.steam = {

@@ -1,9 +1,9 @@
 { config, pkgs, lib, ... }:
 
 {
-  options.modules.compositor.enable = lib.mkEnableOption "compositor";
+  options.modules.niri.enable = lib.mkEnableOption "niri";
 
-  config = lib.mkIf config.modules.compositor.enable {
+  config = lib.mkIf config.modules.niri.enable {
 
     # Niri Config
     home.file.".config/niri/config.kdl".text = ''

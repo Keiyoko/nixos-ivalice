@@ -1,8 +1,13 @@
 # nixos-ivalice
 
-Keio's NixOS flake config for host machine: Ivalice
+Personal NixOS flake config for host machine Ivalice
 
 ## Setup
+
+```
+sudo rm -rf /etc/nixos && sudo git clone https://github.com/Keiyoko/nixos-ivalice.git /etc/nixos
+cd /etc/nixos && sudo nixos-rebuild switch --flake#Ivalice
+```
 
 > Drive mounts in `system-modules/hardware.nix` use personal UUIDs — update or remove before rebuilding (`lsblk -f` or `blkid`).
 
@@ -13,7 +18,6 @@ etc/nixos/
 ├── flake.nix
 ├── flake.lock
 ├── configuration.nix
-├── install.sh
 │
 ├── certs/
 │   └── caddy-local-ca.crt
@@ -22,7 +26,7 @@ etc/nixos/
 │   ├── hardware-configuration.nix
 │   ├── desktop.nix
 │   ├── dms-greeter.nix
-│   ├── gaming.nix
+│   ├── steam.nix
 │   ├── hardware.nix
 │   ├── packages.nix
 │   ├── shell.nix
@@ -40,10 +44,10 @@ etc/nixos/
 │
 └── home-modules/
     ├── home.nix
-    ├── compositor.nix
+    ├── niri.nix
     ├── terminal.nix
     ├── neovim.nix
     ├── media.nix
-    ├── browser.nix
+    ├── zen-browser.nix
     └── dank-shell.nix
 ```

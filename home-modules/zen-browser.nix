@@ -1,12 +1,10 @@
 { config, pkgs, lib, ... }:
 
 let
-  cfg = config.modules.browser.zen;
+  cfg = config.modules.zen-browser;
 in
 {
-  options.modules.browser.zen = {
-    enable = lib.mkEnableOption "Custom Zen Browser configuration with DMS integration";
-  };
+  options.modules.zen-browser.enable = lib.mkEnableOption "Custom Zen Browser configuration with DMS integration";
 
   config = lib.mkIf cfg.enable {
     fonts.fontconfig.enable = true;

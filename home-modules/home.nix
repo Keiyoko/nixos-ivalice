@@ -3,20 +3,20 @@
   imports = [
     inputs.zen-browser.homeModules.beta
     inputs.dms.homeModules.dank-material-shell
-    ./compositor.nix
+    ./niri.nix
     ./terminal.nix
     ./neovim.nix
     ./media.nix
-    ./browser.nix
+    ./zen-browser.nix
     ./dank-shell.nix
   ];
 
   # Modules
-  modules.compositor.enable = true;
+  modules.niri.enable = true;
   modules.terminal.enable = true;
   modules.neovim.enable = true;
   modules.media.enable = true;
-  modules.browser.zen.enable = true;
+  modules.zen-browser.enable = true;
   modules.dms.enable = true;
 
   # Environment Variables

@@ -10,7 +10,7 @@
     ./system-modules/hardware-configuration.nix
     ./system-modules/desktop.nix
     ./system-modules/dms-greeter.nix
-    ./system-modules/gaming.nix
+    ./system-modules/steam.nix
     ./system-modules/hardware.nix
 
     # Core Modules
@@ -32,6 +32,6 @@
   ############### Modules ################
   modules.desktop.enable = true;
   modules.dms-greeter.enable = true;
-  modules.gaming.enable = true;
+  modules.steam.enable = true;
   modules.hardware.enable = true;
 }
