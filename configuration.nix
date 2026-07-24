@@ -28,6 +28,7 @@
     ./service-modules/syncthing.nix
     ./service-modules/orca-slicer.nix
     ./service-modules/freecad.nix
+    ./service-modules/hexchat.nix
   ];
 
   ############### Modules ################
