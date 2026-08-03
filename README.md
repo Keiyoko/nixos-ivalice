@@ -41,7 +41,9 @@ etc/nixos/
 ├── service-modules/
 │   ├── syncthing.nix
 │   ├── orca-slicer.nix
-│   └── freecad.nix
+│   ├── freecad.nix
+│   ├── hexchat.nix
+│   └── caligula.nix
 │
 └── home-modules/
     ├── home.nix
