@@ -30,7 +30,7 @@
     ./service-modules/freecad.nix
     ./service-modules/caligula.nix
     ./service-modules/qbittorrent.nix
-    ./service-modules/sidra.nix
+    ./service-modules/monochrome.nix
   ];
 
   ############### Modules ################
