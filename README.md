@@ -42,9 +42,9 @@ etc/nixos/
 │   ├── syncthing.nix
 │   ├── orca-slicer.nix
 │   ├── freecad.nix
-│   ├── hexchat.nix
 │   ├── caligula.nix
 │   ├── qbittorrent.nix
+│   ├── monochrome.nix
 │   └── sidra.nix
 │
 └── home-modules/
