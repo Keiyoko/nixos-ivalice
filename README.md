@@ -43,7 +43,9 @@ etc/nixos/
 │   ├── orca-slicer.nix
 │   ├── freecad.nix
 │   ├── hexchat.nix
-│   └── caligula.nix
+│   ├── caligula.nix
+│   ├── qbittorrent.nix
+│   └── sidra.nix
 │
 └── home-modules/
     ├── home.nix
