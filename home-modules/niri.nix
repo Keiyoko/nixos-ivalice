@@ -122,6 +122,17 @@
           }
       }
 
+      // Monochrome
+      window-rule {
+          match app-id="chrome-monochrome.tf__-Default"
+          geometry-corner-radius 12
+          clip-to-geometry true
+          opacity 0.9
+          background-effect {
+              blur true
+          }
+      }
+
      // Send Steam notifications/toasts to the bottom right corner
     window-rule {
           match app-id="^steam$" title="^notificationtoasts_.*$"
