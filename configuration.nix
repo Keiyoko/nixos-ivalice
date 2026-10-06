@@ -12,6 +12,7 @@
     ./system-modules/dms-greeter.nix
     ./system-modules/steam.nix
     ./system-modules/hardware.nix
+    ./system-modules/lact.nix
 
     # Core Modules
     ./system-modules/core/boot.nix
@@ -31,6 +32,7 @@
     ./service-modules/caligula.nix
     ./service-modules/qbittorrent.nix
     ./service-modules/monochrome.nix
+    ./service-modules/easyeffects.nix
   ];
 
   ############### Modules ################
