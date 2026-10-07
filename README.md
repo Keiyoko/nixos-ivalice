@@ -28,6 +28,7 @@ etc/nixos/
 │   ├── dms-greeter.nix
 │   ├── steam.nix
 │   ├── hardware.nix
+│   ├── lact.nix
 │   ├── packages.nix
 │   ├── networking.nix
 │   └── core/
@@ -45,7 +46,8 @@ etc/nixos/
 │   ├── caligula.nix
 │   ├── qbittorrent.nix
 │   ├── monochrome.nix
-│   └── sidra.nix
+│   ├── easyeffects.nix
+│   └── claude-code.nix
 │
 └── home-modules/
     ├── home.nix
