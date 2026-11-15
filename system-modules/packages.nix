@@ -37,7 +37,7 @@
 
     # Other Packages
     equibop
-    materialgram
+    telegram
     spotify
   ];
 }
