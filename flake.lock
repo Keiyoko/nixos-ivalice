@@ -3,11 +3,11 @@
     "areofyl-fetch": {
       "flake": false,
       "locked": {
-        "lastModified": 1783093791,
-        "narHash": "sha256-Lc5ILBo60TgJIt7fJywVGzaWFmpBjJRvbU9fD3yCK+0=",
+        "lastModified": 1794368983,
+        "narHash": "sha256-+JZAkwSDDCmoX+4L39fLu1H/5xoBt0xJjymZjadM+0c=",
         "owner": "areofyl",
         "repo": "fetch",
-        "rev": "33b548f9effd838b6e0fad8d19596e45174ba92e",
+        "rev": "ddf360c58f4f5344c651765e05616f29013c814d",
         "type": "github"
       },
       "original": {
