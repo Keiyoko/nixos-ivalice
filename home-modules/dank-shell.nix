@@ -15,6 +15,7 @@
       enableDynamicTheming = true;
 
       settings = {
+        interfaceStyle = "classic";
         dankLauncherV2BorderThickness = 2;
         batteryCriticalThreshold = 10;
         greeterRememberLastUser = true;
