@@ -37,6 +37,7 @@
 
     # Other Packages
     equibop
+    materialgram
     spotify
   ];
 }
