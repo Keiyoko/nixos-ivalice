@@ -37,7 +37,7 @@
 
     # Other Packages
     equibop
-    telegram
+    telegram-desktop
     spotify
   ];
 }
