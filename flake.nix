@@ -14,7 +14,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dms = {
-      url = "github:AvengeMedia/DankMaterialShell/stable";
+      url = "github:AvengeMedia/DankMaterialShell/43255a46ea01e9d0de1fe8ce9897c0d71566b2a8";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     sidra = {
