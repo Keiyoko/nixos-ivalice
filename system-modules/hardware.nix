@@ -17,6 +17,9 @@
       options = [ "defaults" "nofail" "x-gvfs-show" ];
     };
 
+    # rtkit enable for discord screensharing
+    security.rtkit.enable = true;
+
     # Logitech Steering Wheel (G25/G27/G29/G920/G923)
     boot.extraModulePackages = with config.boot.kernelPackages; [ new-lg4ff ];
     boot.kernelModules = [ "hid-logitech-new" ];
