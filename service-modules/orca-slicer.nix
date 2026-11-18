@@ -34,7 +34,8 @@ let
     buildInputs = [ pkgs.makeWrapper ];
     postBuild = ''
       wrapProgram $out/bin/orca-slicer \
-        --set GTK_THEME "Adwaita:dark"
+        --set GTK_THEME "Adwaita:dark" \
+        --set WEBKIT_DISABLE_DMABUF_RENDERER "1"
 
       desktopFile=$(find ${appimageContents} -maxdepth 1 -name "*.desktop" | head -n1)
       install -m 444 -D "$desktopFile" $out/share/applications/orca-slicer.desktop
