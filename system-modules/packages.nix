@@ -39,7 +39,7 @@
     quintom-cursor-theme
 
     # Other Packages
-    equibop
+    discord
     telegram-desktop
     spotify
   ];
