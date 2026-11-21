@@ -5,7 +5,7 @@ let
     name = "monochrome";
     desktopName = "Monochrome";
     comment = "Monochrome Audio Streaming Web Application";
-    exec = "${pkgs.chromium}/bin/chromium --app=https://monochrome.tf/";
+    exec = "${pkgs.chromium}/bin/chromium --app=https://monochrome.st/";
     icon = "multimedia-player";
     categories = [ "AudioVideo" "Audio" "Network" ];
   };
